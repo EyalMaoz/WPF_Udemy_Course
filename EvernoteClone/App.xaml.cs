@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite.Net.Platform.Generic;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,6 @@ namespace EvernoteClone
     /// </summary>
     public partial class App : Application
     {
+        public static SQLitePlatformGeneric GenricSqlite = new SQLitePlatformGeneric();
     }
 }

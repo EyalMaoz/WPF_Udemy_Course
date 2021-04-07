@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using WeatherApp.Model;
 
@@ -15,6 +13,7 @@ namespace WeatherApp.ViewModel.Helpers
         private const string BASE_URL = "http://dataservice.accuweather.com/";
         private const string AUTOCOMPLETE_ENDPOINT = "locations/v1/cities/autocomplete?apikey={0}&q={1}";
         private const string CURRENT_CONDITIONS_ENDPOINT = "currentconditions/v1/{0}?apikey={1}";
+
         public static async Task<List<City>> GetCities(string name)
         {
             List<City> cities = new List<City>();
@@ -27,6 +26,7 @@ namespace WeatherApp.ViewModel.Helpers
             }
             return cities;
         }
+
         public static async Task<CurrentConditions> GetCurrentConditions(string cityKey)
         {
             CurrentConditions currentConditions = new CurrentConditions();
@@ -39,6 +39,5 @@ namespace WeatherApp.ViewModel.Helpers
             }
             return currentConditions;
         }
-
     }
 }
